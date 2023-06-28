@@ -33,8 +33,8 @@ public class StepDef2
 	{
 		sh.driver.get(url);
 	}
-	@Then ("check page title")
-	public void check_page_title()
+	@Then ("check page title1")
+	public void check_page_title1()
 	{
 		sh.driver.getTitle();
 	}	
