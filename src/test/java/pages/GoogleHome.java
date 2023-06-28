@@ -3,6 +3,7 @@ package pages;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,6 +13,7 @@ public class GoogleHome {
 	
 	@FindBy(name="q")private WebElement search;
 	@FindBy(xpath="(//ul[@role='listbox'])[1]/child::li")private List<WebElement> suggestions;
+	@FindBy(xpath="(//input[@value='Google Search'])[2]")private WebElement click;
 	
 	public GoogleHome(RemoteWebDriver driver)
 	{
@@ -70,4 +72,9 @@ public class GoogleHome {
 			System.out.println("All suggestions are incorrect");
 		}
 	}
+	public void clickOnSearch()
+	{
+		search.click();
+	}
+	
 }
