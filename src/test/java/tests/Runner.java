@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features="src/test/resources/features/googleHome.feature", 
                  glue="gluecode",
-                 plugin={"pretty","html:target/myresults"},
+                 plugin={"pretty","json:target/cucumber-reports.json"},
                  monochrome=true)
 
 public class Runner  {
