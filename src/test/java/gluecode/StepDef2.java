@@ -24,14 +24,15 @@ public class StepDef2
 		WebDriverManager.chromedriver().setup();
 		sh.driver=new ChromeDriver();
 		sh.driver.manage().window().maximize();
-		sh.driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		//sh.driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 		
 	}
 	@Then("launch a site {string}")
-	public void launch_a_site(String url)
+	public void launch_a_site(String url)throws Exception
 	{
 		sh.driver.get(url);
+		Thread.sleep(2000);
 	}
 	@Then ("check page title1")
 	public void check_page_title1()
@@ -39,22 +40,23 @@ public class StepDef2
 		sh.driver.getTitle();
 	}	
 	@When("Enter a required {string} data into search")
-	public void Enter_a_required_data_into_search(String data)
+	public void Enter_a_required_data_into_search(String data)throws Exception
 	{
 		sh.google = new GoogleHome(sh.driver);
 		sh.google.searchBox(data);
+		Thread.sleep(2000);
 	}
 	@Then("click on search button")
 	public void click_on_search_button()
 	{
 		sh.google.clickOnSearch();
 	}
-	@Then("back to the prevoius page")
-	public void back_to_the_prevoius_page()throws Exception
-	{
-		sh.driver.navigate().back();
-		Thread.sleep(2000);
-	}
+//	@Then("back to the prevoius page")
+//	public void back_to_the_prevoius_page()throws Exception
+//	{
+//		sh.driver.navigate().back();
+//		Thread.sleep(2000);
+//	}
 	
 	
 }

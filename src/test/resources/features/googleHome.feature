@@ -1,11 +1,14 @@
 Feature: google home page validation
 
-  Background: 
-    Given open a chrome browser
-    Then launch a site "https://www.google.com"
-    And check page title
+  #Background: 
+    #Given open a chrome browser
+    #Then launch a site "https://www.google.com"
+    #And check page title
 
   Scenario Outline: 
+  Given open a browser
+    Then launch site "https://www.google.com"
+    And check title
     When click on search box
     Then enter some text "<data>" on search box
     And check given suggessions "<data>" are correct or not

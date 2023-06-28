@@ -18,8 +18,8 @@ public class StepDef {
 		this.sh=x;
 	}
 	
-	@Given("open a chrome browser")
-	public void open_a_chrome_browser() 
+	@Given("open a browser")
+	public void open_browser() 
 	{
 	    WebDriverManager.chromedriver().setup();
 	    sh.driver = new ChromeDriver();
@@ -27,14 +27,14 @@ public class StepDef {
 	    sh.driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 
-	@Then("launch a site {string}")
-	public void launch_a_site(String url) 
+	@Then("launch site {string}")
+	public void launch_site(String url) 
 	{
 	    sh.driver.get(url);
 	}
 
-	@Then("check page title")
-	public void check_page_title() 
+	@Then("check title")
+	public void check_title() 
 	{
 	   String title= sh.driver.getTitle();
 	    if(title.contains("google"))

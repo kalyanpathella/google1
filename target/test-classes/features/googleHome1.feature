@@ -1,3 +1,4 @@
+
 Feature: google home page validation
 
   Background: 
@@ -8,7 +9,7 @@ Feature: google home page validation
   Scenario Outline: validate google search box
     When Enter a required "<data>" data into search
     And click on search button
-    Then back to the prevoius page
+    #Then back to the prevoius page
 
     Examples: 
       | data     |
